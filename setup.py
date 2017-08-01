@@ -6,12 +6,12 @@ from setuptools import setup, find_packages
 from hbmqtt.version import get_version
 
 setup(
-    name="hbmqtt",
+    name="hbmqtt-samsung",
     version=get_version(),
     description="MQTT client/brocker using Python 3.4 asyncio library",
     author="Nicolas Jouanin",
     author_email='nico@beerfactory.org',
-    url="https://github.com/beerfactory/hbmqtt",
+    url="https://github.com/Samsung-IoT-Academy/hbmqtt",
     license='MIT',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
