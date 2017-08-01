@@ -1,4 +1,10 @@
 __pycache__
 *.pyc
+*.egg-info
 
 .idea/
+.tox/
+__pycache__
+build/
+dist/
+tests/plugins/test.db
