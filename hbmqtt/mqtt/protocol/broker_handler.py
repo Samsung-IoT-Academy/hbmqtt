@@ -135,12 +135,12 @@ class BrokerProtocolHandler(ProtocolHandler):
 
         if connect.variable_header.reserved_flag:
             raise MQTTException('[MQTT-3.1.2-3] CONNECT reserved flag must be set to 0')
-        if connect.proto_name != "MQTT":
+        if connect.proto_name != "MQTT" and connect.proto_name != "MQIsdp":
             raise MQTTException('[MQTT-3.1.2-1] Incorrect protocol name: "%s"' % connect.proto_name)
 
         connack = None
         error_msg = None
-        if connect.proto_level != 4:
+        if connect.proto_level != 4 and connect.proto_level != 3:
             # only MQTT 3.1.1 supported
             error_msg = 'Invalid protocol from %s: %d' % \
                               (format_client_message(address=remote_address, port=remote_port), connect.proto_level)
